@@ -22,16 +22,25 @@ let data = [
     disc: "Sizzld is built by gamblers for gamblers. With our unique community and a huge selection of games like Crash, HashDice, Plinko, Slots, and many more. Your greatest casino adventure is waiting for you!",
     demo: "https://szld.herokuapp.com/",
   },
-  // {
-  //   img: "https://res.cloudinary.com/ghazni/image/upload/v1661323980/Yt-portfolio/ui3_akynn4.png",
-  //   disc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum!",
-  //   demo: "/",
-  // },
-  // {
-  //   img: "https://res.cloudinary.com/ghazni/image/upload/v1661323979/Yt-portfolio/ui1_n3uiaz.png",
-  //   disc: `Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum`,
-  //   demo: "/",
-  // },
+  {
+    img: "/assets/project/repairspots.png",
+    disc: "Repair Spots is a repair shop manager app and point of sale, which is available for download on AppStore. The website is mainly used to advertise Repair Spots features.",
+    demo: "https://repairspots.com/",
+  },
+  {
+    img: "/assets/project/gurikeen.png",
+    disc: `Effortlessly connect with real estate agents, schedule viewings, and ask questions through our in-app messaging system, ensuring seamless communication throughout your home search journey.`,
+    demo: "https://gurikeen.com/home",
+  },
+  {
+    img: "/assets/project/flexlabs.png",
+    disc: `Flexlabs for Flexologist Elevate your career by offering personalized stretch sessions and managing your profile wth ease and for Customer
+    Unlock a world of wellness, book
+    tailored stretch sessions, track your
+    progress, and enjoy a seamless 
+    experience..`,
+    demo: "https://flexlabs.fr/",
+  },
 ];
 
 var settings = {
@@ -39,29 +48,30 @@ var settings = {
   centerMode: true,
   dots: false,
   infinite: true,
-  speed: 500,
+  autoplay: true,
+  autoplaySpeed: 3000,
   slidesToShow: 3,
   slidesToScroll: 1,
-  initialSlide: 0,
+  initialSlide: 1,
   arrows: false,
   responsive: [
     {
-      breakpoint: 990,
+      breakpoint: 1090,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
         dots: false,
-        centerMode: false,
+        centerMode: true,
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 700,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
         initialSlide: 2,
-        centerMode: false,
+        centerMode: true,
       },
     },
     {
@@ -77,7 +87,7 @@ var settings = {
 const SliderComp = () => {
   const arrowRef = useRef(null);
   let sliderProject = "";
-  sliderProject = data.map((item, i) => <Project item={item} key={i} />);
+  sliderProject = data.map((item, i) => <Project  ref={arrowRef} item={item} key={i} />);
   return (
     <Container>
       <Slider ref={arrowRef} {...settings}>

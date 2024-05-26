@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const Project = (props) => {
-  const { img, disc, demo } = props.item;
+  const { img, disc, demo, } = props.item;
   return (
     <Container className="project">
       <img src={img} alt="project" />
       <div className="disc">
         <h1>Description</h1>
         <p>
-          {disc}
+          {disc.length>100?disc.slice(0,100)+'...':disc}
           <a href={demo}>demo</a>
         </p>
       </div>
@@ -38,17 +38,18 @@ const Container = styled.div`
     position: absolute;
     right: 0;
     left: 0;
-    bottom: -10rem;
+    bottom: -15rem;
     text-align: left;
-    padding: 0.5rem;
+    padding-bottom: 0.5rem;
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
     transition: all 400ms ease-in-out;
     h1 {
-      font-size: 1rem;
+      font-size: 0.7rem;
+      margin-left: 1.4rem;
     }
 
     p {
-      width: 90%;
+      width: 80%;
       font-size: 0.8rem;
       a {
         margin-left: 0.4rem;
