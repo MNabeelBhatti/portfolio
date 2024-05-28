@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { IoIosQuote } from "react-icons/io";
-import { AiOutlineStar } from "react-icons/ai";
 
 const ClientSlider = (props) => {
-  const { tech, img_url, disc } = props.item;
+  const { tech, img_url, } = props.item;
   return (
     <Container>
       {/* <Header>

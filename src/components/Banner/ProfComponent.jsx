@@ -1,33 +1,34 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineInstagram, AiFillGithub } from "react-icons/ai";
+import {  AiFillGithub } from "react-icons/ai";
 import { GiEarthAmerica } from "react-icons/gi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
-
+import content from "../../content.json";
 const ProfComponent = () => {
   return (
     <Container id="home">
       <Slide direction="left">
         <Texts>
           <h4>
-            Hello <span className="green">I'am</span>
+            Hi There!  
+            <span class="wave" role="img" aria-labelledby="wave">👋🏻</span>
+            <span className="green">I'am</span>
           </h4>
-          <h1 className="green">Nabeel Shoukat</h1>
-          <h3>Mern Stack Developer</h3>
+          <h1 className="green">{content.name}</h1>
+          <h3>{content.title}</h3>
           <p>
-            I am a qualified and professional web developer with 2 years of
-            experience in MERN Stack web development. Strong creative and
-            analytical skills. Team player with an eye for detail.
+          {content.description}
           </p>
           <button>
-            <a href="https://wa.me/+923074928188"> Let's talk</a>
+            <a href={content.socialLinks.whatsapp}> Let's talk</a>
           </button>
           <Social>
             <p>Check out my</p>
             <div className="social-icons">
               <span>
-                <a href="https://github.com/MNabeelBhatti">
+                <a href={content.socialLinks.github}>
                   <AiFillGithub />
                 </a>
               </span>
@@ -37,7 +38,7 @@ const ProfComponent = () => {
                 </a>
               </span>
               <span>
-                <a href="https://www.linkedin.com/in/nabeel-bhatti-37abb7179">
+                <a href={content.socialLinks.linkdin}>
                   <FaLinkedinIn />
                 </a>
               </span>
@@ -68,7 +69,7 @@ export default ProfComponent;
 const Container = styled.div`
   display: flex;
   gap: 2rem;
-  padding-top: 3rem;
+  padding-top: 2rem;
   width: 80%;
   max-width: 1280px;
   margin: 0 auto;
@@ -83,6 +84,7 @@ const Container = styled.div`
 `;
 const Texts = styled.div`
   flex: 1;
+  min-width:290px;
   h4 {
     padding: 1rem 0;
     font-weight: 500;
@@ -104,6 +106,7 @@ const Texts = styled.div`
 
   button {
     padding: 0.7rem 2rem;
+    margin-bottom: -1rem;
     margin-top: 3rem;
     cursor: pointer;
     background-color: var(--primaryColor);

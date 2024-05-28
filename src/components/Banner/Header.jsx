@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { GiCandleFlame } from "react-icons/gi";
 import { SiNamebase } from "react-icons/si";
-
+import content from "../../content.json";
 const Header = () => {
   const [bar, setBar] = useState(false);
   return (
@@ -14,21 +13,11 @@ const Header = () => {
         <h1>Portfolio</h1>
       </Logo>
       <Nav bar={bar}>
-        <span>
-          <a href="#home">Home</a>
+      {content.navLinks.map((link, index) => (
+        <span onClick={()=>setBar(!bar)} key={index}>
+          <a href={link.href}>{link.text}</a>
         </span>
-        <span>
-          <a href="#service">Services</a>
-        </span>
-        <span>
-          <a href="#project">Projects</a>
-        </span>
-        <span>
-          <a href="#client">Skills</a>
-        </span>
-        <span>
-          <a href="#footer">Portfolio</a>
-        </span>
+      ))}
       </Nav>
       <div onClick={() => setBar(!bar)} className="bars">
         <div className="bar"></div>

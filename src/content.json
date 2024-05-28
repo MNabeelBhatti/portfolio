@@ -1,0 +1,19 @@
+{
+   "name":"Nabeel Shoukat" ,
+   "title":"Mern Stack Developer",
+   "description":"I am a qualified and professional web developer with 3 years of experience in MERN Stack web development. Strong creative and analytical skills. Team player with an eye for detail.",
+   "socialLinks":{
+    "whatsapp":"https://wa.me/+923074928188",
+    "github":"https://github.com/MNabeelBhatti",
+    "linkdin":"https://www.linkedin.com/in/nabeel-bhatti-37abb7179",
+    "facebook":"https://wa.me/+923074928188"
+   },
+   "navLinks" :[
+      { "href": "#home", "text": "Home" },
+      { "href": "#service", "text": "Services" },
+      { "href": "#project", "text": "Projects" },
+      { "href": "#client", "text": "Skills" },
+      { "href": "#footer", "text": "Portfolio" }
+    ]
+
+}
